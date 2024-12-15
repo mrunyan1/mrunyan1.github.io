@@ -1,47 +1,79 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
 body {
-    background-color: black;
-    color: #00FF00;
-    font-family: 'Press Start 2P', monospace;
-    font-size: 14px;
+    background: linear-gradient(to bottom, #00FFFF, #66FF66);
+    color: #000;
+    font-family: "Comic Sans MS", "Courier New", monospace;
     margin: 0;
-    padding: 20px;
-    line-height: 1.5;
-}
-
-a {
-    color: #00FF00;
-    text-decoration: underline;
-}
-
-a:hover {
-    color: #33FF33;
+    padding: 0;
 }
 
 h1, h2, h3 {
-    color: #33FF33;
+    color: #3333FF;
+    text-shadow: 2px 2px 5px #FF66FF;
 }
 
-.container {
-    max-width: 800px;
+#main-content {
     margin: 0 auto;
+    max-width: 900px;
+    padding: 20px;
 }
 
-ul {
+table {
+    width: 100%;
+    border: 3px solid #333;
+    background-color: #FFF;
+}
+
+.header {
+    text-align: center;
+    background-color: #FF33CC;
+    color: #FFF;
+    padding: 10px;
+}
+
+.sidebar {
+    width: 20%;
+    background-color: #FFFF99;
+    padding: 15px;
+    border-right: 3px solid #333;
+}
+
+.sidebar ul {
     list-style-type: none;
     padding: 0;
 }
 
-li {
-    margin: 10px 0;
+.sidebar a {
+    text-decoration: none;
+    color: #0000FF;
+    font-weight: bold;
 }
 
-.blink {
-    animation: blink 1s step-start infinite;
+.sidebar a:hover {
+    text-decoration: underline;
+    color: #FF0000;
 }
 
-@keyframes blink {
-    50% { opacity: 0; }
+.content {
+    padding: 20px;
+    background-color: #FFF;
+}
+
+.footer {
+    text-align: center;
+    background-color: #FF33CC;
+    color: #FFF;
+    padding: 10px;
+    font-size: 14px;
+}
+
+marquee {
+    font-size: 16px;
+    color: #00FF00;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    border: 5px dashed #FF66FF;
 }
 
