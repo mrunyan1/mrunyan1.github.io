@@ -1,21 +1,14 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: monospace; /* Simulates a text-based file */
-  font-size: 14px; /* Adjust font size */
-  letter-spacing: 1px; /* Space between letters */
-  line-height: 1; /* Remove line spacing */
-  color: #aaaaaa; /* Subtle genomic text color */
+  font-family: monospace; /* Text appearance */
+  font-size: 14px; /* Adjust font size for appearance */
+  letter-spacing: 1px; /* Add a bit of space between letters */
+  line-height: 1.2; /* Close line spacing to look continuous */
+  color: #777; /* Subtle grayish color for the text */
   background-color: #fdfdfd; /* Light background */
-
-  /* Repeating text background */
-  background-image: repeating-linear-gradient(
-    to right,
-    transparent,
-    transparent 10px,
-    rgba(0, 0, 0, 0.05) 10px,
-    rgba(0, 0, 0, 0.05) 11px
-  );
+  white-space: pre-wrap; /* Forces wrapping of long text */
+  word-wrap: break-word; /* Ensures text doesn't overflow */
 }
 
 #genomic-background {
@@ -25,11 +18,5 @@ body {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  font-family: monospace;
-  color: #aaa;
-  font-size: 14px;
-  line-height: 1;
-  pointer-events: none; /* Ensures it doesn't block page clicks */
+  pointer-events: none; /* Ensure this doesn't block interactions */
 }
