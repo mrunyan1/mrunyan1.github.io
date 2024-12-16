@@ -1,79 +1,29 @@
 body {
-    background: linear-gradient(to bottom, #00FFFF, #66FF66);
-    color: #000;
-    font-family: "Comic Sans MS", "Courier New", monospace;
-    margin: 0;
-    padding: 0;
+  font-family: monospace; /* Makes text look like a text file */
+  background-color: #f9f9f9; /* Light grey background */
+  color: #333; /* Text color for the main content */
+  font-size: 14px; /* Adjust font size */
+  line-height: 1.6; /* Space between lines */
+
+  /* Add the genomic sequence background */
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 40px,
+    #f0f0f0 40px,
+    #f0f0f0 42px
+  ), 
+  linear-gradient(to bottom, #f9f9f9, #ffffff);
+  background-size: 100% 50px; /* Adjusts the FASTA spacing effect */
 }
 
-h1, h2, h3 {
-    color: #3333FF;
-    text-shadow: 2px 2px 5px #FF66FF;
-}
-
-#main-content {
-    margin: 0 auto;
-    max-width: 900px;
-    padding: 20px;
-}
-
-table {
-    width: 100%;
-    border: 3px solid #333;
-    background-color: #FFF;
-}
-
-.header {
-    text-align: center;
-    background-color: #FF33CC;
-    color: #FFF;
-    padding: 10px;
-}
-
-.sidebar {
-    width: 20%;
-    background-color: #FFFF99;
-    padding: 15px;
-    border-right: 3px solid #333;
-}
-
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.sidebar a {
-    text-decoration: none;
-    color: #0000FF;
-    font-weight: bold;
-}
-
-.sidebar a:hover {
-    text-decoration: underline;
-    color: #FF0000;
-}
-
-.content {
-    padding: 20px;
-    background-color: #FFF;
-}
-
-.footer {
-    text-align: center;
-    background-color: #FF33CC;
-    color: #FFF;
-    padding: 10px;
-    font-size: 14px;
-}
-
-marquee {
-    font-size: 16px;
-    color: #00FF00;
-}
-
-img {
-    display: block;
-    margin: 0 auto;
-    border: 5px dashed #FF66FF;
+.genome-background {
+  white-space: pre-wrap; /* Ensures line breaks are preserved */
+  word-wrap: break-word; /* Prevents overflow */
+  margin: 0 auto;
+  padding: 20px;
+  color: #666; /* Muted color for background sequence */
+  letter-spacing: 1px; /* Spacing between characters */
+  max-width: 80%;
 }
 
