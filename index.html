@@ -3,17 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Genomic Background</title>
+  <title>Genomic Sequence Background</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="genome-background">
-    >chr1<br>
-    AGCTAGCTGACTAGCTAGCTAGCTGACTAGCTAGCTAGCTAGCTGACTAGCTAGCTAGCT<br>
-    GACTAGCTAGCTGACTAGCTAGCTAGCTGACTAGCTAGCTGACTAGCTAGCTAGCTAGCT<br>
-    AGCTGACTAGCTAGCTGACTAGCTAGCTAGCTAGCTAGCTGACTAGCTAGCTGACTAGCT<br>
-    <!-- Add more lines as needed -->
-  </div>
+  <div id="genomic-background"></div>
+
+  <script>
+    function generateSequence(length) {
+      const bases = ['A', 'G', 'C', 'T'];
+      let sequence = '';
+      for (let i = 0; i < length; i++) {
+        sequence += bases[Math.floor(Math.random() * bases.length)];
+      }
+      return sequence;
+    }
+
+    function fillBackground() {
+      const sequenceDiv = document.getElementById('genomic-background');
+      const charCount = 100000; // Adjust for more sequence
+      sequenceDiv.textContent = generateSequence(charCount);
+    }
+
+    fillBackground();
+  </script>
 </body>
 </html>
-
