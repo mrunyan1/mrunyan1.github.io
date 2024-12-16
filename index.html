@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Genomic Sequence Background</title>
+  <title>Vertical Genomic Sequence</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,13 +19,19 @@
       return sequence;
     }
 
-    function fillBackground() {
-      const sequenceDiv = document.getElementById('genomic-background');
-      const charCount = 100000; // Adjust for more sequence
-      sequenceDiv.textContent = generateSequence(charCount);
+    function fillVertical() {
+      const lines = 1000; // Number of lines to fill vertically
+      const lineLength = 60; // Length of each line
+      let content = '';
+
+      for (let i = 0; i < lines; i++) {
+        content += generateSequence(lineLength) + '\n';
+      }
+
+      document.getElementById('genomic-background').textContent = content;
     }
 
-    fillBackground();
+    fillVertical();
   </script>
 </body>
 </html>
