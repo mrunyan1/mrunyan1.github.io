@@ -38,3 +38,30 @@
   </script>
 </body>
 </html>
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: monospace; /* Fixed-width font for genomic look */
+  font-size: 12px; /* Adjust font size for better fit */
+  letter-spacing: 1px; /* Tight spacing between letters */
+  line-height: 1; /* No extra space between lines */
+  color: #555; /* Subtle gray for the sequence */
+  background-color: #ffffff; /* Clean white background */
+  height: 100%;
+  width: 100%;
+  overflow: hidden; /* Prevent any scrolling gaps */
+}
+
+#genomic-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Prevents scrollbars from appearing */
+  white-space: pre-wrap; /* Ensures wrapping when text exceeds width */
+  word-wrap: break-word; /* Forcing long words (AGCT) to break cleanly */
+  pointer-events: none; /* Ensures it doesn't block other content */
+}
+
