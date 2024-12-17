@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vertical Genomic Sequence</title>
+  <title>Full-Page Genomic Sequence</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="genomic-background"></div>
 
   <script>
-    function generateSequence(length) {
+    function generateSequenceLine(length) {
       const bases = ['A', 'G', 'C', 'T'];
       let sequence = '';
       for (let i = 0; i < length; i++) {
@@ -19,19 +19,22 @@
       return sequence;
     }
 
-    function fillVertical() {
-      const lines = 1000; // Number of lines to fill vertically
-      const lineLength = 60; // Length of each line
-      let content = '';
+    function fillPage() {
+      const backgroundDiv = document.getElementById('genomic-background');
+      const viewportHeight = window.innerHeight;
+      const lineHeight = 14; // Approx height of a single line of text in pixels
+      const numLines = Math.ceil(viewportHeight / lineHeight) * 20; // Overshoot for scrolling
 
-      for (let i = 0; i < lines; i++) {
-        content += generateSequence(lineLength) + '\n';
+      let content = '';
+      for (let i = 0; i < numLines; i++) {
+        content += generateSequenceLine(100) + '\n';
       }
 
-      document.getElementById('genomic-background').textContent = content;
+      backgroundDiv.textContent = content;
     }
 
-    fillVertical();
+    fillPage();
+    window.addEventListener('resize', fillPage); // Adjust on resize
   </script>
 </body>
 </html>
