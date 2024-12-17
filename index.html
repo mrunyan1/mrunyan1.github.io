@@ -22,19 +22,21 @@
     function fillPage() {
       const backgroundDiv = document.getElementById('genomic-background');
       const viewportHeight = window.innerHeight;
-      const lineHeight = 14; // Approx height of a single line of text in pixels
-      const numLines = Math.ceil(viewportHeight / lineHeight) * 20; // Overshoot for scrolling
+      const viewportWidth = window.innerWidth;
+      const lineLength = Math.floor(viewportWidth / 10); // Adjust characters per line
+      const lineHeight = 12; // Approx. height of each line in pixels
+      const numLines = Math.ceil(viewportHeight / lineHeight) * 2; // Ensure full coverage
 
       let content = '';
       for (let i = 0; i < numLines; i++) {
-        content += generateSequenceLine(100) + '\n';
+        content += generateSequenceLine(lineLength) + '\n';
       }
 
       backgroundDiv.textContent = content;
     }
 
     fillPage();
-    window.addEventListener('resize', fillPage); // Adjust on resize
+    window.addEventListener('resize', fillPage); // Redraw on window resize
   </script>
 </body>
 </html>
