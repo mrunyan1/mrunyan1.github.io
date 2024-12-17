@@ -3,12 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Full-Page Genomic Sequence</title>
+  <title>My Personal Website</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Genomic Background -->
   <div id="genomic-background"></div>
 
+  <!-- Main Content -->
+  <div class="content">
+    <header>
+      <h1>Welcome to My Website</h1>
+    </header>
+    <section id="about-me">
+      <h2>About Me</h2>
+      <p>
+        Hello! I'm [Your Name], a scientist working on bioinformatics projects. 
+        I love studying genomic sequences and building tools to analyze RNA splicing data.
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>My Projects</h2>
+      <ul>
+        <li><strong>Project 1:</strong> Placeholder for Project 1 description.</li>
+        <li><strong>Project 2:</strong> Placeholder for Project 2 description.</li>
+        <li><strong>Project 3:</strong> Placeholder for Project 3 description.</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 [Your Name]. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- Background Sequence Script -->
   <script>
     function generateSequenceLine(length) {
       const bases = ['A', 'G', 'C', 'T'];
@@ -23,9 +52,9 @@
       const backgroundDiv = document.getElementById('genomic-background');
       const viewportHeight = window.innerHeight;
       const viewportWidth = window.innerWidth;
-      const lineLength = Math.floor(viewportWidth / 10); // Adjust characters per line
-      const lineHeight = 12; // Approx. height of each line in pixels
-      const numLines = Math.ceil(viewportHeight / lineHeight) * 2; // Ensure full coverage
+      const lineLength = Math.floor(viewportWidth / 10); // Characters per line
+      const lineHeight = 14; // Line height in pixels
+      const numLines = Math.ceil(viewportHeight / lineHeight) * 5; // Overshoot for scrolling
 
       let content = '';
       for (let i = 0; i < numLines; i++) {
@@ -36,7 +65,7 @@
     }
 
     fillPage();
-    window.addEventListener('resize', fillPage); // Redraw on window resize
+    window.addEventListener('resize', fillPage); // Redraw on resize
   </script>
 </body>
 </html>
