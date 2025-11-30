@@ -6,156 +6,167 @@
 
   <!-- INLINE CSS SO STYLES DEFINITELY LOAD -->
   <style>
-    /* SUPER SIMPLE RETRO GREEN THEME */
+/* ===== Windows 98-ish Blue/Grey ===== */
 
-    /* Page background & text */
-    body {
-      margin: 0;
-      padding: 20px;
-      background-color: #000000;   /* black */
-      color: #00ff66;              /* neon green text */
-      font-family: Verdana, Geneva, sans-serif;
-    }
+/* Page background & text */
+body {
+  margin: 0;
+  padding: 20px;
+  background-color: #0080c0;      /* blue background */
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  color: #000000;
+}
 
-    /* Main box */
-    #wrapper {
-      width: 800px;
-      margin: 0 auto;
-      background-color: #001100;    /* dark green panel */
-      border: 5px double #00ff00;   /* bright green border */
-      padding: 10px;
-    }
+/* Main box */
+#wrapper {
+  width: 800px;
+  margin: 0 auto;
+  background-color: #c0c0c0;      /* classic grey */
+  border: 2px solid #ffffff;
+  box-shadow: 3px 3px 0 #000000;  /* chunky shadow */
+  padding: 8px;
+}
 
-    /* Header stuff */
-    header {
-      text-align: center;
-      margin-bottom: 10px;
-    }
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 10px;
+  background: linear-gradient(to bottom, #000080, #000040);
+  color: #ffffff;
+  padding: 6px;
+  border: 2px solid #ffffff;
+}
 
-    .marquee-text {
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
+.marquee-text {
+  font-weight: bold;
+  letter-spacing: 1px;
+}
 
-    .tagline {
-      margin-top: 5px;
-      font-size: 0.9rem;
-    }
+.tagline {
+  margin-top: 4px;
+  font-size: 0.9rem;
+}
 
-    /* Navigation bar */
-    nav {
-      text-align: center;
-      padding: 6px;
-      margin-bottom: 10px;
-      border: 2px ridge #00ff00;
-      background: #003300;
-      font-weight: bold;
-    }
+/* Navigation bar (looks like old menu bar) */
+nav {
+  margin-top: 6px;
+  margin-bottom: 10px;
+  padding: 4px;
+  background-color: #d4d0c8;
+  border: 2px groove #ffffff;
+  text-align: center;
+  font-size: 0.9rem;
+}
 
-    nav a {
-      color: #00ffcc;
-      text-decoration: none;
-      padding: 0 4px;
-    }
+nav a {
+  color: #000080;
+  text-decoration: none;
+  padding: 0 6px;
+}
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+nav a:hover {
+  background-color: #000080;
+  color: #ffffff;
+}
 
-    /* Table layout */
-    #layout {
-      width: 100%;
-      border-collapse: collapse;
-    }
+/* Layout */
+#layout {
+  width: 100%;
+  border-collapse: collapse;
+}
 
-    #sidebar {
-      width: 220px;
-      vertical-align: top;
-      background-color: #00000044;  /* slightly darker sidebar */
-      border-right: 2px dashed #00ff00;
-    }
+#sidebar {
+  width: 220px;
+  vertical-align: top;
+  background-color: #d4d0c8;
+  border-right: 2px groove #ffffff;
+  padding: 4px;
+}
 
-    #content {
-      vertical-align: top;
-    }
+#content {
+  vertical-align: top;
+  background-color: #ffffff;
+  padding: 4px;
+}
 
-    /* Sidebar headings & lists */
-    #sidebar h2 {
-      font-size: 1.1rem;
-      margin-top: 0;
-      border-bottom: 2px solid #00ff00;
-    }
+/* Sidebar headings & lists */
+#sidebar h2 {
+  font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: 4px;
+  background-color: #000080;
+  color: #ffffff;
+  padding: 2px 4px;
+}
 
-    #sidebar ul {
-      list-style: square;
-      padding-left: 18px;
-    }
+#sidebar ul {
+  list-style: square;
+  padding-left: 18px;
+}
 
-    .small {
-      font-size: 0.8rem;
-    }
+.small {
+  font-size: 0.8rem;
+}
 
-    /* Blinking UNDER CONSTRUCTION text */
-    .blink {
-      animation: blinker 0.8s linear infinite;
-      font-weight: bold;
-      color: #00ff00;
-      text-transform: uppercase;
-    }
+/* Under construction box */
+.under-construction {
+  margin-top: 8px;
+  padding: 4px;
+  border: 2px dashed #000080;
+  background-color: #f3f3f3;
+}
 
-    @keyframes blinker {
-      50% {
-        opacity: 0;
-      }
-    }
+.blink {
+  animation: blinker 0.9s steps(2, start) infinite;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #000080;
+}
 
-    .under-construction {
-      margin-top: 10px;
-      padding: 5px;
-      border: 2px dotted #00ffff;
-    }
+@keyframes blinker {
+  50% { opacity: 0; }
+}
 
-    /* Main content headings */
-    section h1 {
-      font-size: 1.4rem;
-      margin-bottom: 4px;
-      text-transform: uppercase;
-      border-bottom: 2px solid #00ff00;
-    }
+/* Content headings & projects */
+section h1 {
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+  border-bottom: 2px solid #000080;
+}
 
-    /* Project boxes */
-    .project {
-      border: 2px groove #00ff00;
-      padding: 6px;
-      margin-bottom: 8px;
-      background-color: #002200;
-    }
+.project {
+  border: 2px groove #c0c0c0;
+  padding: 6px;
+  margin-bottom: 8px;
+  background-color: #f5f5f5;
+}
 
-    /* Links */
-    a {
-      color: #00ffcc;
-    }
+/* Links */
+a {
+  color: #0000ee;
+}
 
-    a:visited {
-      color: #66ff99;
-    }
+a:visited {
+  color: #551a8b;
+}
 
-    /* Horizontal rule */
-    hr {
-      border: 0;
-      border-top: 2px dashed #00ffff;
-      margin: 10px 0;
-    }
+/* Horizontal rule */
+hr {
+  border: 0;
+  border-top: 1px solid #808080;
+  margin: 8px 0;
+}
 
-    /* Footer */
-    footer {
-      margin-top: 10px;
-      text-align: center;
-      font-size: 0.75rem;
-      border-top: 2px solid #00ff00;
-      padding-top: 5px;
-    }
+/* Footer */
+footer {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 0.75rem;
+  border-top: 1px solid #808080;
+  padding-top: 4px;
+  background-color: #d4d0c8;
+}
+
   </style>
 
   <!-- you can keep this line or delete it; CSS is now inline
