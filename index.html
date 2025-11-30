@@ -3,7 +3,164 @@
 <head>
   <meta charset="UTF-8">
   <title>Your Name's Webzone</title>
+
+  <!-- INLINE CSS SO STYLES DEFINITELY LOAD -->
+  <style>
+    /* SUPER SIMPLE RETRO GREEN THEME */
+
+    /* Page background & text */
+    body {
+      margin: 0;
+      padding: 20px;
+      background-color: #000000;   /* black */
+      color: #00ff66;              /* neon green text */
+      font-family: Verdana, Geneva, sans-serif;
+    }
+
+    /* Main box */
+    #wrapper {
+      width: 800px;
+      margin: 0 auto;
+      background-color: #001100;    /* dark green panel */
+      border: 5px double #00ff00;   /* bright green border */
+      padding: 10px;
+    }
+
+    /* Header stuff */
+    header {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .marquee-text {
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .tagline {
+      margin-top: 5px;
+      font-size: 0.9rem;
+    }
+
+    /* Navigation bar */
+    nav {
+      text-align: center;
+      padding: 6px;
+      margin-bottom: 10px;
+      border: 2px ridge #00ff00;
+      background: #003300;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: #00ffcc;
+      text-decoration: none;
+      padding: 0 4px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Table layout */
+    #layout {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    #sidebar {
+      width: 220px;
+      vertical-align: top;
+      background-color: #00000044;  /* slightly darker sidebar */
+      border-right: 2px dashed #00ff00;
+    }
+
+    #content {
+      vertical-align: top;
+    }
+
+    /* Sidebar headings & lists */
+    #sidebar h2 {
+      font-size: 1.1rem;
+      margin-top: 0;
+      border-bottom: 2px solid #00ff00;
+    }
+
+    #sidebar ul {
+      list-style: square;
+      padding-left: 18px;
+    }
+
+    .small {
+      font-size: 0.8rem;
+    }
+
+    /* Blinking UNDER CONSTRUCTION text */
+    .blink {
+      animation: blinker 0.8s linear infinite;
+      font-weight: bold;
+      color: #00ff00;
+      text-transform: uppercase;
+    }
+
+    @keyframes blinker {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .under-construction {
+      margin-top: 10px;
+      padding: 5px;
+      border: 2px dotted #00ffff;
+    }
+
+    /* Main content headings */
+    section h1 {
+      font-size: 1.4rem;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      border-bottom: 2px solid #00ff00;
+    }
+
+    /* Project boxes */
+    .project {
+      border: 2px groove #00ff00;
+      padding: 6px;
+      margin-bottom: 8px;
+      background-color: #002200;
+    }
+
+    /* Links */
+    a {
+      color: #00ffcc;
+    }
+
+    a:visited {
+      color: #66ff99;
+    }
+
+    /* Horizontal rule */
+    hr {
+      border: 0;
+      border-top: 2px dashed #00ffff;
+      margin: 10px 0;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 0.75rem;
+      border-top: 2px solid #00ff00;
+      padding-top: 5px;
+    }
+  </style>
+
+  <!-- you can keep this line or delete it; CSS is now inline
   <link rel="stylesheet" href="style.css">
+  -->
 </head>
 <body>
   <!-- Background + border is handled in CSS -->
@@ -13,7 +170,7 @@
       <marquee behavior="alternate" scrollamount="6">
         <span class="marquee-text">★ Welcome to My Personal Webzone ★</span>
       </marquee>
-      <p class="tagline">Hand‑coded portfolio &amp; resume – just like it's 2002.</p>
+      <p class="tagline">Hand-coded portfolio &amp; resume – just like it's 2002.</p>
     </header>
 
     <nav>
@@ -41,8 +198,6 @@
 
           <div class="under-construction">
             <p><span class="blink">Under Construction!</span></p>
-            <!-- Put a GIF in /images if you want -->
-            <!-- <img src="images/under-construction.gif" alt="Under Construction"> -->
           </div>
         </td>
 
