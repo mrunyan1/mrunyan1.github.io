@@ -7,3 +7,155 @@
   --link: #0000ee;     /* classic blue link */
   --link-visited: #551a8b;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: "Verdana", "Geneva", sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* Main box with border like an old webpage */
+#wrapper {
+  width: 800px;
+  margin: 0 auto;
+  background-color: var(--panel-bg);
+  border: 5px double var(--accent);
+  padding: 10px;
+  box-shadow: 0 0 15px #000000aa;
+}
+
+/* Header + marquee */
+header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.marquee-text {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.tagline {
+  margin-top: 5px;
+  font-size: 0.9rem;
+}
+
+/* Navigation bar */
+nav {
+  text-align: center;
+  padding: 6px;
+  margin-bottom: 10px;
+  border: 2px ridge var(--accent);
+  background: linear-gradient(to bottom, var(--accent2), var(--panel-bg));
+  font-weight: bold;
+}
+
+nav a {
+  color: var(--link);
+  text-decoration: none;
+  padding: 0 4px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Table layout */
+#layout {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#sidebar {
+  width: 220px;
+  vertical-align: top;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-right: 2px dashed var(--accent);
+}
+
+#content {
+  vertical-align: top;
+}
+
+/* Sidebar stuff */
+#sidebar h2 {
+  font-size: 1.1rem;
+  margin-top: 0;
+  border-bottom: 2px solid var(--accent);
+}
+
+#sidebar ul {
+  list-style: square;
+  padding-left: 18px;
+}
+
+.small {
+  font-size: 0.8rem;
+}
+
+/* Under construction blink effect */
+.blink {
+  animation: blinker 0.8s linear infinite;
+  font-weight: bold;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+.under-construction {
+  margin-top: 10px;
+  padding: 5px;
+  border: 2px dotted var(--accent2);
+}
+
+/* Main content */
+section h1 {
+  font-size: 1.4rem;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--accent);
+}
+
+.project {
+  border: 2px groove var(--accent);
+  padding: 6px;
+  margin-bottom: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Links */
+a {
+  color: var(--link);
+}
+
+a:visited {
+  color: var(--link-visited);
+}
+
+/* Horizontal rule */
+hr {
+  border: 0;
+  border-top: 2px dashed var(--accent2);
+  margin: 10px 0;
+}
+
+/* Footer */
+footer {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 0.75rem;
+  border-top: 2px solid var(--accent);
+  padding-top: 5px;
+}
