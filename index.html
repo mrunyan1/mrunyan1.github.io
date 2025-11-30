@@ -5,249 +5,256 @@
   <title>Matthew Runyan</title>
 
   <style>
-  /* ===== Windows 98-ish Blue/Grey with dynamic DNA background ===== */
+  /* windows 98-ish blue/grey with dynamic dna background */
 
-  /* Page background & text */
+  /* base page setup: blue background, default font, no scroll on x */
   body {
-    margin: 0;
-    padding: 20px;
-    background-color: #0080c0;      /* solid blue */
-    font-family: "Trebuchet MS", Verdana, sans-serif;
-    color: #000000;
-    position: relative;
-    overflow-x: hidden;
+    margin: 0;                             /* remove default page margin */
+    padding: 20px;                         /* space around the main box */
+    background-color: #0080c0;             /* solid blue background */
+    font-family: "Trebuchet MS", Verdana, sans-serif; /* main font stack */
+    color: #000000;                        /* default text color */
+    position: relative;                    /* so child layers can use z-index */
+    overflow-x: hidden;                    /* prevent sideways scroll bars */
   }
 
-  /* DNA text container (we'll fill this with JS) */
-#dna-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;                 /* full viewport */
-    margin: 0;
-    padding: 0;                    /* no inset – start at exact top/left */
-    white-space: pre-wrap;
-    word-break: break-all;
-    font-family: "Courier New", monospace;
-    font-size: 10px;
-    line-height: 10px;
-    color: #33a4dd;                /* slightly lighter than #0080c0 */
-    opacity: 0.4;
-    z-index: 0;
-    pointer-events: none;
-}
+  /* dna text layer that we fill with javascript */
+  #dna-bg {
+    position: fixed;                       /* stick to viewport, not the page */
+    top: 0;                                /* align to very top of window */
+    left: 0;                               /* align to very left of window */
+    width: 100vw;                          /* full viewport width */
+    height: 100vh;                         /* full viewport height */
+    margin: 0;                             /* no margin around this layer */
+    padding: 0;                            /* dna text starts at pixel 0,0 */
+    white-space: pre-wrap;                 /* allow wrapping but keep spacing */
+    word-break: break-all;                 /* break long strings anywhere */
+    font-family: "Courier New", monospace; /* monospaced for nice grid feel */
+    font-size: 10px;                       /* small dna letters */
+    line-height: 10px;                     /* tight rows for dense text */
+    color: #33a4dd;                        /* lighter blue than background */
+    opacity: 0.4;                          /* make dna faint and subtle */
+    z-index: 0;                            /* sit behind the main content */
+    pointer-events: none;                  /* let clicks go through this layer */
+  }
 
-
-  /* Main box */
+  /* main grey window that holds everything */
   #wrapper {
-    width: 800px;
-    margin: 0 auto;
-    background-color: #c0c0c0;      /* classic grey */
-    border: 2px solid #ffffff;
-    box-shadow: 4px 4px 0 #000000;  /* chunky shadow */
-    padding: 8px;
-    position: relative;
-    z-index: 1;                     /* above DNA text */
+    width: 800px;                          /* classic fixed width layout */
+    margin: 0 auto;                        /* center horizontally */
+    background-color: #c0c0c0;             /* light grey window color */
+    border: 2px solid #ffffff;             /* white border for retro frame */
+    box-shadow: 4px 4px 0 #000000;         /* chunky black drop shadow */
+    padding: 8px;                          /* space inside the window */
+    position: relative;                    /* so it can stack above dna layer */
+    z-index: 1;                            /* above dna background */
   }
 
-  /* Header */
+  /* top banner with name */
   header {
-    text-align: center;
-    margin-bottom: 10px;
-    background: linear-gradient(to bottom, #000080, #000040);
-    color: #ffffff;
-    padding: 10px;
-    border: 2px solid #ffffff;
+    text-align: center;                    /* center text in header */
+    margin-bottom: 10px;                   /* space below header */
+    background: linear-gradient(to bottom, #000080, #000040); /* blue gradient bar */
+    color: #ffffff;                        /* white header text */
+    padding: 10px;                         /* inner space in header */
+    border: 2px solid #ffffff;             /* white border around header */
   }
 
   header h1 {
-    margin: 0;
-    font-size: 1.8rem;
-    letter-spacing: 1px;
+    margin: 0;                             /* no extra margin on main title */
+    font-size: 1.8rem;                     /* larger title text */
+    letter-spacing: 1px;                   /* slight spacing between letters */
   }
 
-  /* Navigation bar */
+  /* navigation bar that looks like an old menu bar */
   nav {
-    margin-top: 6px;
-    margin-bottom: 10px;
-    padding: 4px;
-    background-color: #d4d0c8;
-    border: 2px groove #ffffff;
-    text-align: center;
-    font-size: 0.9rem;
+    margin-top: 6px;                       /* space above nav */
+    margin-bottom: 10px;                   /* space below nav */
+    padding: 4px;                          /* inner padding in nav bar */
+    background-color: #d4d0c8;             /* windows 98 style grey */
+    border: 2px groove #ffffff;            /* grooved border for retro feel */
+    text-align: center;                    /* center nav links */
+    font-size: 0.9rem;                     /* slightly smaller nav text */
   }
 
   nav a {
-    color: #000080;
-    text-decoration: none;
-    padding: 2px 8px;
-    margin: 0 2px;
-    border-radius: 3px;
+    color: #000080;                        /* dark blue links */
+    text-decoration: none;                 /* no underline by default */
+    padding: 2px 8px;                      /* click area around text */
+    margin: 0 2px;                         /* tiny gap between links */
+    border-radius: 3px;                    /* small rounded corners */
   }
 
   nav a:hover {
-    background-color: #000080;
+    background-color: #000080;             /* invert colors on hover */
     color: #ffffff;
   }
 
   nav a.active {
-    background-color: #000080;
+    background-color: #000080;             /* highlight active tab */
     color: #ffffff;
-    box-shadow: inset 0 0 0 1px #ffffff;
+    box-shadow: inset 0 0 0 1px #ffffff;   /* thin inner border for focus */
   }
 
-  /* Layout */
+  /* main table layout for sidebar + content */
   #layout {
-    width: 100%;
-    border-collapse: collapse;
+    width: 100%;                           /* take full width of wrapper */
+    border-collapse: collapse;             /* remove gaps between table cells */
   }
 
+  /* left sidebar area */
   #sidebar {
-    width: 220px;
-    vertical-align: top;
-    background-color: #d4d0c8;
-    border-right: 2px groove #ffffff;
-    padding: 4px;
+    width: 220px;                          /* fixed sidebar width */
+    vertical-align: top;                   /* align content to top of cell */
+    background-color: #d4d0c8;             /* same grey as nav bar */
+    border-right: 2px groove #ffffff;      /* grooved divider between side and main */
+    padding: 4px;                          /* inner padding */
   }
 
+  /* main content area */
   #content {
-    vertical-align: top;
-    background-color: #ffffff;
-    padding: 4px 8px;
+    vertical-align: top;                   /* align content to top */
+    background-color: #ffffff;             /* white page background */
+    padding: 4px 8px;                      /* inner padding for text */
   }
 
-  /* Sidebar headings & lists */
+  /* sidebar section titles */
   #sidebar h2 {
-    font-size: 1rem;
-    margin-top: 0;
-    margin-bottom: 4px;
-    background-color: #000080;
-    color: #ffffff;
-    padding: 2px 4px;
+    font-size: 1rem;                       /* sidebar heading size */
+    margin-top: 0;                         /* remove extra top margin */
+    margin-bottom: 4px;                    /* small gap below heading */
+    background-color: #000080;             /* dark blue heading bar */
+    color: #ffffff;                        /* white heading text */
+    padding: 2px 4px;                      /* bit of padding inside bar */
   }
 
+  /* sidebar list of links */
   #sidebar ul {
-    list-style: square;
-    padding-left: 18px;
+    list-style: square;                    /* square bullets */
+    padding-left: 18px;                    /* indent bullet list */
   }
 
   .small {
-    font-size: 0.8rem;
+    font-size: 0.8rem;                     /* helper class for small text */
   }
 
-  /* Portrait image – smaller + centered */
+  /* portrait image in sidebar */
   .portrait {
-    display: block;
-    width: 160px;
-    height: auto;
-    margin: 12px auto 4px;
-    border: 2px solid #000080;
-    background-color: #ffffff;
+    display: block;                        /* treat as block to center with margin */
+    width: 160px;                          /* fixed width for portrait */
+    height: auto;                          /* keep aspect ratio */
+    margin: 12px auto 4px;                 /* center with auto left/right margins */
+    border: 2px solid #000080;             /* dark blue frame around image */
+    background-color: #ffffff;             /* white behind image */
   }
 
-  /* Content headings & projects */
+  /* top-level section headings in main area */
   section h1 {
-    font-size: 1.2rem;
-    margin-bottom: 4px;
-    border-bottom: 2px solid #000080;
+    font-size: 1.2rem;                     /* section title size */
+    margin-bottom: 4px;                    /* small space below title */
+    border-bottom: 2px solid #000080;      /* blue line under title */
   }
 
+  /* project boxes */
   .project {
-    border: 2px groove #c0c0c0;
-    padding: 6px;
-    margin-bottom: 8px;
-    background-color: #f5f5f5;
-    transition: box-shadow 0.15s ease, transform 0.15s ease;
+    border: 2px groove #c0c0c0;            /* grooved border for retro card feel */
+    padding: 6px;                          /* inner spacing */
+    margin-bottom: 8px;                    /* space between projects */
+    background-color: #f5f5f5;             /* light grey background */
+    transition: box-shadow 0.15s ease,     /* smooth hover shadow change */
+                transform 0.15s ease;      /* smooth hover movement */
   }
 
   .project:hover {
-    box-shadow: 0 0 6px #00008055;
-    transform: translateY(-1px);
+    box-shadow: 0 0 6px #00008055;         /* soft blue glow on hover */
+    transform: translateY(-1px);           /* tiny lift effect */
   }
 
-  /* Links */
+  /* general link colors */
   a {
-    color: #0000ee;
+    color: #0000ee;                        /* standard blue link color */
   }
 
   a:visited {
-    color: #551a8b;
+    color: #551a8b;                        /* classic visited link purple */
   }
 
-  /* Horizontal rule */
+  /* divider lines between sections */
   hr {
-    border: 0;
-    border-top: 1px solid #808080;
-    margin: 8px 0;
+    border: 0;                             /* remove default border */
+    border-top: 1px solid #808080;         /* thin grey line instead */
+    margin: 8px 0;                         /* vertical spacing around line */
   }
 
-  /* Footer */
+  /* footer at bottom of window */
   footer {
-    margin-top: 10px;
-    text-align: center;
-    font-size: 0.75rem;
-    border-top: 1px solid #808080;
-    padding-top: 4px;
-    background-color: #d4d0c8;
+    margin-top: 10px;                      /* space above footer */
+    text-align: center;                    /* center footer text */
+    font-size: 0.75rem;                    /* smaller footer text */
+    border-top: 1px solid #808080;         /* thin top border */
+    padding-top: 4px;                      /* space above first footer line */
+    background-color: #d4d0c8;             /* grey footer background */
   }
   </style>
 
   <script>
-    // Show only one section at a time + highlight active tab
+    // show only one section at a time and highlight the active tab
     function showSection(id) {
-      var sections = document.querySelectorAll('section');
+      var sections = document.querySelectorAll('section');  // grab all sections
       sections.forEach(function(sec) {
-        sec.style.display = (sec.id === id) ? 'block' : 'none';
+        sec.style.display = (sec.id === id) ? 'block' : 'none'; // show only chosen one
       });
 
-      var links = document.querySelectorAll('nav a');
+      var links = document.querySelectorAll('nav a');       // grab all nav links
       links.forEach(function(link) {
         if (link.getAttribute('href') === '#' + id) {
-          link.classList.add('active');
+          link.classList.add('active');                    // highlight active link
         } else {
-          link.classList.remove('active');
+          link.classList.remove('active');                 // clear highlight on others
         }
       });
     }
 
-    // Fill DNA background with enough random ACGT to cover the viewport
+    // generate random acgt string to fill the dna background layer
     function fillDnaBackground() {
-      var dnaDiv = document.getElementById('dna-bg');
-      if (!dnaDiv) return;
+      var dnaDiv = document.getElementById('dna-bg');      // the dna text container
+      if (!dnaDiv) return;                                // safety check
 
-      var width = window.innerWidth;
-      var height = window.innerHeight;
+      var width = window.innerWidth;                      // current viewport width
+      var height = window.innerHeight;                    // current viewport height
 
-      var charWidth = 6;   // rough width in px for monospace at 10px
-      var lineHeight = 10; // matches CSS font-size/line-height
+      var charWidth = 6;                                  // approximate char width in px
+      var lineHeight = 10;                                // matches css line height
 
-      var charsPerLine = Math.ceil(width / charWidth);
-      var numLines = Math.ceil(height / lineHeight) + 5; // little extra
+      var charsPerLine = Math.ceil(width / charWidth);    // how many chars fit per row
+      var numLines = Math.ceil(height / lineHeight) + 5;  // how many rows fill screen plus extra
 
-      var totalChars = charsPerLine * numLines;
-      var bases = ['A', 'C', 'G', 'T'];
-      var result = '';
+      var totalChars = charsPerLine * numLines;           // total chars needed for full grid
+      var bases = ['A', 'C', 'G', 'T'];                   // possible dna letters
+      var result = '';                                    // string we will build
 
       for (var i = 0; i < totalChars; i++) {
-        result += bases[Math.floor(Math.random() * 4)];
+        result += bases[Math.floor(Math.random() * 4)];   // pick random base each time
       }
 
-      dnaDiv.textContent = result;
+      dnaDiv.textContent = result;                        // place dna text into the layer
     }
 
+    // run once on page load
     window.addEventListener('load', function() {
-      showSection('about');
-      fillDnaBackground();
+      showSection('about');                               // default to about section
+      fillDnaBackground();                                // draw initial dna background
     });
 
+    // adjust dna text when window size changes
     window.addEventListener('resize', fillDnaBackground);
   </script>
 </head>
 <body>
-  <!-- DNA background layer -->
+  <!-- dna background layer sits under everything -->
   <div id="dna-bg"></div>
 
+  <!-- main wrapper holds header, nav, sidebar, and content -->
   <div id="wrapper">
     <header>
       <h1>Matthew Runyan</h1>
