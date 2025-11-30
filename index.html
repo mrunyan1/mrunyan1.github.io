@@ -4,9 +4,8 @@
   <meta charset="UTF-8">
   <title>Matthew Runyan</title>
 
-  <!-- INLINE CSS SO STYLES DEFINITELY LOAD -->
-   <style>
-  /* ===== Windows 98-ish Blue/Grey with DNA background ===== */
+  <style>
+  /* ===== Windows 98-ish Blue/Grey with dynamic DNA background ===== */
 
   /* Page background & text */
   body {
@@ -15,28 +14,27 @@
     background-color: #0080c0;      /* solid blue */
     font-family: "Trebuchet MS", Verdana, sans-serif;
     color: #000000;
-    position: relative;             /* needed for ::before overlay */
+    position: relative;
     overflow-x: hidden;
   }
 
-  /* DNA text overlay */
-  body::before {
-    content: "ACGTTGCAAGTCGATCGGATCCGTAAGCTTAGGCTTACGATCGATGCGTACGTAGCTGATCGTAGCTAGGCTTACGATCGTACGATGCTAGCTAGGCTTAGCTAGCTAGGCTTACGATCGTACGATGCTAGCTAGGCTTAGCTAGCTAGGCTTACGATCGTACGATGCTAGCTAGGCTTAGCTAGCTAGGCTTACGATCGTACGATGCTAGCTAGGCTTAGCTAGCTAGGCTTACGATCGTACGATGCTAGC";
+  /* DNA text container (we'll fill this with JS) */
+  #dna-bg {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;                 /* fill viewport; fixed stays put as you scroll */
     padding: 20px;
     white-space: pre-wrap;
     word-break: break-all;
     font-family: "Courier New", monospace;
     font-size: 10px;
     line-height: 10px;
-    color: #33a4dd;                 /* slightly lighter than #0080c0 */
-    opacity: 0.4;                   /* faint so content is readable */
+    color: #33a4dd;                /* slightly lighter than #0080c0 */
+    opacity: 0.4;
     z-index: 0;
-    pointer-events: none;           /* clicks go through */
+    pointer-events: none;          /* don't block clicks */
   }
 
   /* Main box */
@@ -65,11 +63,6 @@
     margin: 0;
     font-size: 1.8rem;
     letter-spacing: 1px;
-  }
-
-  .tagline {
-    margin-top: 4px;
-    font-size: 0.9rem;
   }
 
   /* Navigation bar */
@@ -198,7 +191,6 @@
   }
   </style>
 
-
   <script>
     // Show only one section at a time + highlight active tab
     function showSection(id) {
@@ -217,13 +209,43 @@
       });
     }
 
-    // On load, show About by default
+    // Fill DNA background with enough random ACGT to cover the viewport
+    function fillDnaBackground() {
+      var dnaDiv = document.getElementById('dna-bg');
+      if (!dnaDiv) return;
+
+      var width = window.innerWidth;
+      var height = window.innerHeight;
+
+      var charWidth = 6;   // rough width in px for monospace at 10px
+      var lineHeight = 10; // matches CSS font-size/line-height
+
+      var charsPerLine = Math.ceil(width / charWidth);
+      var numLines = Math.ceil(height / lineHeight) + 5; // little extra
+
+      var totalChars = charsPerLine * numLines;
+      var bases = ['A', 'C', 'G', 'T'];
+      var result = '';
+
+      for (var i = 0; i < totalChars; i++) {
+        result += bases[Math.floor(Math.random() * 4)];
+      }
+
+      dnaDiv.textContent = result;
+    }
+
     window.addEventListener('load', function() {
       showSection('about');
+      fillDnaBackground();
     });
+
+    window.addEventListener('resize', fillDnaBackground);
   </script>
 </head>
 <body>
+  <!-- DNA background layer -->
+  <div id="dna-bg"></div>
+
   <div id="wrapper">
     <header>
       <h1>Matthew Runyan</h1>
@@ -246,7 +268,6 @@
             <li><a href="CV.pdf" target="_blank">Download my full CV (PDF)</a></li>
           </ul>
 
-          <!-- Portrait image -->
           <img src="portrait.png" alt="Portrait of Matthew Runyan" class="portrait">
         </td>
 
