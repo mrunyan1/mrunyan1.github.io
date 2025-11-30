@@ -5,18 +5,38 @@
   <title>Matthew Runyan</title>
 
   <!-- INLINE CSS SO STYLES DEFINITELY LOAD -->
-  <style>
-  /* ===== Windows 98-ish Blue/Grey with a little flair ===== */
+   <style>
+  /* ===== Windows 98-ish Blue/Grey with DNA background ===== */
 
   /* Page background & text */
   body {
     margin: 0;
     padding: 20px;
-    /* checkerboard-ish blue pattern, very retro */
-    background-image: linear-gradient(45deg, #0099ff 25%, #0080c0 25%, #0080c0 50%, #0099ff 50%, #0099ff 75%, #0080c0 75%, #0080c0 100%);
-    background-size: 40px 40px;
+    background-color: #0080c0;      /* solid blue */
     font-family: "Trebuchet MS", Verdana, sans-serif;
     color: #000000;
+    position: relative;             /* needed for ::before overlay */
+    overflow-x: hidden;
+  }
+
+  /* DNA text overlay */
+  body::before {
+    content: "ACGTTGCAAGTCGATCGGATCCGTAAGCTTAGGCTTACGATCGATGCGTACGTAGCTGATCGTAGCTAGGCTTACGATCGTACGATGCTAGCTAGGCTTAGCTAGCTAGGCTTACGATCGTACGATGCTAGCTAGGCTTAGCTAGCTAGGCTTACGATCGTACGATGCTAGCTAGGCTTAGCTAGCTAGGCTTACGATCGTACGATGCTAGCTAGGCTTAGCTAGCTAGGCTTACGATCGTACGATGCTAGC";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    white-space: pre-wrap;
+    word-break: break-all;
+    font-family: "Courier New", monospace;
+    font-size: 10px;
+    line-height: 10px;
+    color: #33a4dd;                 /* slightly lighter than #0080c0 */
+    opacity: 0.4;                   /* faint so content is readable */
+    z-index: 0;
+    pointer-events: none;           /* clicks go through */
   }
 
   /* Main box */
@@ -27,6 +47,8 @@
     border: 2px solid #ffffff;
     box-shadow: 4px 4px 0 #000000;  /* chunky shadow */
     padding: 8px;
+    position: relative;
+    z-index: 1;                     /* above DNA text */
   }
 
   /* Header */
@@ -50,7 +72,7 @@
     font-size: 0.9rem;
   }
 
-  /* Navigation bar (looks like old menu bar) */
+  /* Navigation bar */
   nav {
     margin-top: 6px;
     margin-bottom: 10px;
@@ -122,9 +144,9 @@
   /* Portrait image – smaller + centered */
   .portrait {
     display: block;
-    width: 160px;          /* smaller */
+    width: 160px;
     height: auto;
-    margin: 12px auto 4px; /* center it */
+    margin: 12px auto 4px;
     border: 2px solid #000080;
     background-color: #ffffff;
   }
@@ -175,6 +197,7 @@
     background-color: #d4d0c8;
   }
   </style>
+
 
   <script>
     // Show only one section at a time + highlight active tab
