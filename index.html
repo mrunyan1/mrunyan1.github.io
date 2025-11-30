@@ -6,13 +6,15 @@
 
   <!-- INLINE CSS SO STYLES DEFINITELY LOAD -->
   <style>
-  /* ===== Windows 98-ish Blue/Grey ===== */
+  /* ===== Windows 98-ish Blue/Grey with a little flair ===== */
 
   /* Page background & text */
   body {
     margin: 0;
     padding: 20px;
-    background-color: #0080c0;      /* blue background */
+    /* checkerboard-ish blue pattern, very retro */
+    background-image: linear-gradient(45deg, #0099ff 25%, #0080c0 25%, #0080c0 50%, #0099ff 50%, #0099ff 75%, #0080c0 75%, #0080c0 100%);
+    background-size: 40px 40px;
     font-family: "Trebuchet MS", Verdana, sans-serif;
     color: #000000;
   }
@@ -23,7 +25,7 @@
     margin: 0 auto;
     background-color: #c0c0c0;      /* classic grey */
     border: 2px solid #ffffff;
-    box-shadow: 3px 3px 0 #000000;  /* chunky shadow */
+    box-shadow: 4px 4px 0 #000000;  /* chunky shadow */
     padding: 8px;
   }
 
@@ -62,12 +64,20 @@
   nav a {
     color: #000080;
     text-decoration: none;
-    padding: 0 6px;
+    padding: 2px 8px;
+    margin: 0 2px;
+    border-radius: 3px;
   }
 
   nav a:hover {
     background-color: #000080;
     color: #ffffff;
+  }
+
+  nav a.active {
+    background-color: #000080;
+    color: #ffffff;
+    box-shadow: inset 0 0 0 1px #ffffff;
   }
 
   /* Layout */
@@ -87,7 +97,7 @@
   #content {
     vertical-align: top;
     background-color: #ffffff;
-    padding: 4px;
+    padding: 4px 8px;
   }
 
   /* Sidebar headings & lists */
@@ -109,12 +119,12 @@
     font-size: 0.8rem;
   }
 
-  /* Portrait image */
+  /* Portrait image – smaller + centered */
   .portrait {
     display: block;
-    width: 100%;
+    width: 160px;          /* smaller */
     height: auto;
-    margin-top: 10px;
+    margin: 12px auto 4px; /* center it */
     border: 2px solid #000080;
     background-color: #ffffff;
   }
@@ -131,6 +141,12 @@
     padding: 6px;
     margin-bottom: 8px;
     background-color: #f5f5f5;
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+
+  .project:hover {
+    box-shadow: 0 0 6px #00008055;
+    transform: translateY(-1px);
   }
 
   /* Links */
@@ -161,11 +177,20 @@
   </style>
 
   <script>
-    // Show only one section at a time
+    // Show only one section at a time + highlight active tab
     function showSection(id) {
       var sections = document.querySelectorAll('section');
       sections.forEach(function(sec) {
         sec.style.display = (sec.id === id) ? 'block' : 'none';
+      });
+
+      var links = document.querySelectorAll('nav a');
+      links.forEach(function(link) {
+        if (link.getAttribute('href') === '#' + id) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
       });
     }
 
@@ -198,7 +223,7 @@
             <li><a href="CV.pdf" target="_blank">Download my full CV (PDF)</a></li>
           </ul>
 
-          <!-- Portrait image where under-construction used to be -->
+          <!-- Portrait image -->
           <img src="portrait.png" alt="Portrait of Matthew Runyan" class="portrait">
         </td>
 
