@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Matthew Runyan's Webzone</title>
+  <title>Matthew Runyan</title>
 
   <!-- INLINE CSS SO STYLES DEFINITELY LOAD -->
   <style>
@@ -33,12 +33,13 @@
     margin-bottom: 10px;
     background: linear-gradient(to bottom, #000080, #000040);
     color: #ffffff;
-    padding: 6px;
+    padding: 10px;
     border: 2px solid #ffffff;
   }
 
-  .marquee-text {
-    font-weight: bold;
+  header h1 {
+    margin: 0;
+    font-size: 1.8rem;
     letter-spacing: 1px;
   }
 
@@ -108,23 +109,14 @@
     font-size: 0.8rem;
   }
 
-  /* Under construction box */
-  .under-construction {
-    margin-top: 8px;
-    padding: 4px;
-    border: 2px dashed #000080;
-    background-color: #f3f3f3;
-  }
-
-  .blink {
-    animation: blinker 0.9s steps(2, start) infinite;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #000080;
-  }
-
-  @keyframes blinker {
-    50% { opacity: 0; }
+  /* Portrait image */
+  .portrait {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border: 2px solid #000080;
+    background-color: #ffffff;
   }
 
   /* Content headings & projects */
@@ -168,52 +160,46 @@
   }
   </style>
 
-  <!-- external style.css not needed right now
-  <link rel="stylesheet" href="style.css">
-  -->
+  <script>
+    // Show only one section at a time
+    function showSection(id) {
+      var sections = document.querySelectorAll('section');
+      sections.forEach(function(sec) {
+        sec.style.display = (sec.id === id) ? 'block' : 'none';
+      });
+    }
+
+    // On load, show About by default
+    window.addEventListener('load', function() {
+      showSection('about');
+    });
+  </script>
 </head>
 <body>
-  <!-- Background + border is handled in CSS -->
-
   <div id="wrapper">
     <header>
-      <marquee behavior="alternate" scrollamount="6">
-        <span class="marquee-text">★ Welcome to Matthew Runyan's Webzone ★</span>
-      </marquee>
-      <p class="tagline">Hand-coded portfolio &amp; resume – just like it's 2002, but with 2025 bioinformatics.</p>
+      <h1>Matthew Runyan</h1>
     </header>
 
     <nav>
-      <a href="#about">About</a> |
-      <a href="#projects">Projects</a> |
-      <a href="#resume">Résumé</a> |
-      <a href="#contact">Contact</a>
+      <a href="#about" onclick="showSection('about'); return false;">About</a> |
+      <a href="#projects" onclick="showSection('projects'); return false;">Projects</a> |
+      <a href="#resume" onclick="showSection('resume'); return false;">Résumé</a> |
+      <a href="#contact" onclick="showSection('contact'); return false;">Contact</a>
     </nav>
 
-    <!-- Table layout to really lean into early 2000s -->
     <table id="layout" cellspacing="0" cellpadding="10">
       <tr>
         <td id="sidebar">
-          <h2>Cool Links</h2>
+          <h2>Links</h2>
           <ul>
             <li><a href="https://github.com/mrunyan1" target="_blank">My GitHub (@mrunyan1)</a></li>
             <li><a href="https://www.linkedin.com/in/mrunyan1" target="_blank">My LinkedIn</a></li>
             <li><a href="CV.pdf" target="_blank">Download my full CV (PDF)</a></li>
           </ul>
 
-          <h2>Site Info</h2>
-          <p class="small">
-            Last updated: <span>Nov 2025</span><br>
-            Location: Boston, MA, USA<br>
-            Best viewed in 1024x768 😉
-          </p>
-
-          <div class="under-construction">
-            <p><span class="blink">Under Construction!</span></p>
-            <p class="small">
-              More projects, figures, and model visualizations coming soon.
-            </p>
-          </div>
+          <!-- Portrait image where under-construction used to be -->
+          <img src="portrait.png" alt="Portrait of Matthew Runyan" class="portrait">
         </td>
 
         <td id="content">
@@ -231,8 +217,6 @@
               Engineering</strong> at the University of Virginia.
             </p>
           </section>
-
-          <hr>
 
           <section id="projects">
             <h1>Projects</h1>
@@ -277,8 +261,6 @@
             </div>
           </section>
 
-          <hr>
-
           <section id="resume">
             <h1>Résumé</h1>
 
@@ -286,69 +268,43 @@
             <ul>
               <li>
                 <strong>MS, Bioinformatics</strong>, Northeastern University, Boston, MA, USA<br>
-                <span class="small">Sept 2023 – Apr 2025</span><br>
-                <span class="small">
-                  Relevant coursework: Machine Learning &amp; Data Mining; Genomics in Bioinformatics;
-                  Statistics for Bioinformatics.
-                </span>
+                <span class="small">Sept 2023 – Apr 2025</span>
               </li>
               <li>
                 <strong>BS, Biomedical Engineering</strong>, University of Virginia, School of Engineering and Applied Science,<br>
                 Charlottesville, VA, USA<br>
-                <span class="small">Aug 2018 – May 2022</span><br>
-                <span class="small">
-                  Capstone: Automated selection and placement of multicellular aggregates for biofabricated tissue constructs.
-                </span>
+                <span class="small">Aug 2018 – May 2022</span>
               </li>
             </ul>
 
-            <h3>Research Experience</h3>
+            <h3>Research &amp; Industry Experience</h3>
             <ul>
               <li>
-                <strong>ML Engineer, Computational Biology</strong> – Institute for Experiential AI, Northeastern University,<br>
+                <strong>ML Engineer, Computational Biology</strong> – Institute for Experiential AI, Northeastern University,
                 Boston, MA, USA <span class="small">(July 2024 – present)</span>
-                <ul class="small">
-                  <li>Develop deep learning models and genomic pipelines for pre-mRNA splicing and variant interpretation.</li>
-                  <li>Build and maintain Nextflow pipelines for RNA-seq and WGS data from GTEx, ENCODE, and internal cohorts.</li>
-                  <li>Design modular training frameworks with automated experiment tracking and evaluation reports.</li>
-                  <li>Implement interpretability workflows (DeepLIFT/SHAP, seqlet discovery, RBP motif analysis).</li>
-                </ul>
               </li>
               <li>
-                <strong>Research Assistant</strong> – Child Health Research Center, University of Virginia,<br>
-                Charlottesville, VA, USA <span class="small">(Feb 2022 – Aug 2023)</span>
-                <ul class="small">
-                  <li>Studied genetic and molecular mechanisms of pediatric kidney disease in APOL1 models.</li>
-                  <li>Maintained transgenic mouse and Drosophila lines; performed PCR/qPCR genotyping.</li>
-                  <li>Built RNA-seq analysis pipelines for urine-derived renal epithelial cells and differential expression.</li>
-                </ul>
+                <strong>Research Assistant</strong> – Child Health Research Center, University of Virginia
+                <span class="small">(Feb 2022 – Aug 2023)</span>
               </li>
               <li>
-                <strong>Biomedical Engineer Intern</strong> – NanoDx,<br>
-                Southborough, MA, USA <span class="small">(May 2021 – Aug 2021)</span>
-                <ul class="small">
-                  <li>Performed wafer-level biosensor testing and device prototyping.</li>
-                  <li>Used microfluidic and electronic probing to evaluate semiconductor performance.</li>
-                  <li>Designed and 3D-printed custom fixtures and mounts for probe positioning.</li>
-                </ul>
+                <strong>Biomedical Engineer Intern</strong> – NanoDx
+                <span class="small">(May 2021 – Aug 2021)</span>
               </li>
             </ul>
 
-            <h3>Skills</h3>
+            <h3>Selected Skills</h3>
             <ul>
-              <li><strong>Programming &amp; Data Analysis:</strong> Python, R, MATLAB, SQL, Bash; Git, GitHub</li>
-              <li><strong>Machine Learning &amp; Statistics:</strong> TensorFlow, PyTorch, scikit-learn; deep learning for genomics; statistical modeling</li>
-              <li><strong>Bioinformatics &amp; Genomics:</strong> RNA-seq and WGS analysis; STAR, HTSeq, rMATS, LeafCutter, SpliSER, Nextflow, SAMtools, DESeq2</li>
-              <li><strong>Laboratory Techniques:</strong> Mammalian cell culture, RNA/DNA extraction, PCR/qPCR, immunohistochemistry, mouse handling and genotyping</li>
-              <li><strong>Computing &amp; Platforms:</strong> Linux, SLURM/HPC, Docker, Conda, Jupyter, AWS</li>
+              <li><strong>Programming &amp; Data:</strong> Python, R, MATLAB, Bash, Git/GitHub</li>
+              <li><strong>ML &amp; DL:</strong> TensorFlow, PyTorch, scikit-learn; deep learning for genomics</li>
+              <li><strong>Bioinformatics:</strong> RNA-seq/WGS pipelines, STAR, rMATS, LeafCutter, SpliSER, Nextflow</li>
+              <li><strong>Platforms:</strong> Linux, SLURM/HPC, Docker, Conda, Jupyter</li>
             </ul>
 
             <p class="small">
-              For full details, see my <a href="CV.pdf" target="_blank">CV (PDF)</a>.
+              Full details in my <a href="CV.pdf" target="_blank">CV (PDF)</a>.
             </p>
           </section>
-
-          <hr>
 
           <section id="contact">
             <h1>Contact</h1>
