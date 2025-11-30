@@ -2,176 +2,173 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Your Name's Webzone</title>
+  <title>Matthew Runyan's Webzone</title>
 
   <!-- INLINE CSS SO STYLES DEFINITELY LOAD -->
   <style>
-/* ===== Windows 98-ish Blue/Grey ===== */
-/* ===== Simple Early-2000s Personal Homepage ===== */
-/* ===== Windows 98-ish Blue/Grey ===== */
+  /* ===== Windows 98-ish Blue/Grey ===== */
 
-/* Page background & text */
-body {
-  margin: 0;
-  padding: 20px;
-  background-color: #0080c0;      /* blue background */
-  font-family: "Trebuchet MS", Verdana, sans-serif;
-  color: #000000;
-}
+  /* Page background & text */
+  body {
+    margin: 0;
+    padding: 20px;
+    background-color: #0080c0;      /* blue background */
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    color: #000000;
+  }
 
-/* Main box */
-#wrapper {
-  width: 800px;
-  margin: 0 auto;
-  background-color: #c0c0c0;      /* classic grey */
-  border: 2px solid #ffffff;
-  box-shadow: 3px 3px 0 #000000;  /* chunky shadow */
-  padding: 8px;
-}
+  /* Main box */
+  #wrapper {
+    width: 800px;
+    margin: 0 auto;
+    background-color: #c0c0c0;      /* classic grey */
+    border: 2px solid #ffffff;
+    box-shadow: 3px 3px 0 #000000;  /* chunky shadow */
+    padding: 8px;
+  }
 
-/* Header */
-header {
-  text-align: center;
-  margin-bottom: 10px;
-  background: linear-gradient(to bottom, #000080, #000040);
-  color: #ffffff;
-  padding: 6px;
-  border: 2px solid #ffffff;
-}
+  /* Header */
+  header {
+    text-align: center;
+    margin-bottom: 10px;
+    background: linear-gradient(to bottom, #000080, #000040);
+    color: #ffffff;
+    padding: 6px;
+    border: 2px solid #ffffff;
+  }
 
-.marquee-text {
-  font-weight: bold;
-  letter-spacing: 1px;
-}
+  .marquee-text {
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
 
-.tagline {
-  margin-top: 4px;
-  font-size: 0.9rem;
-}
+  .tagline {
+    margin-top: 4px;
+    font-size: 0.9rem;
+  }
 
-/* Navigation bar (looks like old menu bar) */
-nav {
-  margin-top: 6px;
-  margin-bottom: 10px;
-  padding: 4px;
-  background-color: #d4d0c8;
-  border: 2px groove #ffffff;
-  text-align: center;
-  font-size: 0.9rem;
-}
+  /* Navigation bar (looks like old menu bar) */
+  nav {
+    margin-top: 6px;
+    margin-bottom: 10px;
+    padding: 4px;
+    background-color: #d4d0c8;
+    border: 2px groove #ffffff;
+    text-align: center;
+    font-size: 0.9rem;
+  }
 
-nav a {
-  color: #000080;
-  text-decoration: none;
-  padding: 0 6px;
-}
+  nav a {
+    color: #000080;
+    text-decoration: none;
+    padding: 0 6px;
+  }
 
-nav a:hover {
-  background-color: #000080;
-  color: #ffffff;
-}
+  nav a:hover {
+    background-color: #000080;
+    color: #ffffff;
+  }
 
-/* Layout */
-#layout {
-  width: 100%;
-  border-collapse: collapse;
-}
+  /* Layout */
+  #layout {
+    width: 100%;
+    border-collapse: collapse;
+  }
 
-#sidebar {
-  width: 220px;
-  vertical-align: top;
-  background-color: #d4d0c8;
-  border-right: 2px groove #ffffff;
-  padding: 4px;
-}
+  #sidebar {
+    width: 220px;
+    vertical-align: top;
+    background-color: #d4d0c8;
+    border-right: 2px groove #ffffff;
+    padding: 4px;
+  }
 
-#content {
-  vertical-align: top;
-  background-color: #ffffff;
-  padding: 4px;
-}
+  #content {
+    vertical-align: top;
+    background-color: #ffffff;
+    padding: 4px;
+  }
 
-/* Sidebar headings & lists */
-#sidebar h2 {
-  font-size: 1rem;
-  margin-top: 0;
-  margin-bottom: 4px;
-  background-color: #000080;
-  color: #ffffff;
-  padding: 2px 4px;
-}
+  /* Sidebar headings & lists */
+  #sidebar h2 {
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 4px;
+    background-color: #000080;
+    color: #ffffff;
+    padding: 2px 4px;
+  }
 
-#sidebar ul {
-  list-style: square;
-  padding-left: 18px;
-}
+  #sidebar ul {
+    list-style: square;
+    padding-left: 18px;
+  }
 
-.small {
-  font-size: 0.8rem;
-}
+  .small {
+    font-size: 0.8rem;
+  }
 
-/* Under construction box */
-.under-construction {
-  margin-top: 8px;
-  padding: 4px;
-  border: 2px dashed #000080;
-  background-color: #f3f3f3;
-}
+  /* Under construction box */
+  .under-construction {
+    margin-top: 8px;
+    padding: 4px;
+    border: 2px dashed #000080;
+    background-color: #f3f3f3;
+  }
 
-.blink {
-  animation: blinker 0.9s steps(2, start) infinite;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #000080;
-}
+  .blink {
+    animation: blinker 0.9s steps(2, start) infinite;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #000080;
+  }
 
-@keyframes blinker {
-  50% { opacity: 0; }
-}
+  @keyframes blinker {
+    50% { opacity: 0; }
+  }
 
-/* Content headings & projects */
-section h1 {
-  font-size: 1.2rem;
-  margin-bottom: 4px;
-  border-bottom: 2px solid #000080;
-}
+  /* Content headings & projects */
+  section h1 {
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+    border-bottom: 2px solid #000080;
+  }
 
-.project {
-  border: 2px groove #c0c0c0;
-  padding: 6px;
-  margin-bottom: 8px;
-  background-color: #f5f5f5;
-}
+  .project {
+    border: 2px groove #c0c0c0;
+    padding: 6px;
+    margin-bottom: 8px;
+    background-color: #f5f5f5;
+  }
 
-/* Links */
-a {
-  color: #0000ee;
-}
+  /* Links */
+  a {
+    color: #0000ee;
+  }
 
-a:visited {
-  color: #551a8b;
-}
+  a:visited {
+    color: #551a8b;
+  }
 
-/* Horizontal rule */
-hr {
-  border: 0;
-  border-top: 1px solid #808080;
-  margin: 8px 0;
-}
+  /* Horizontal rule */
+  hr {
+    border: 0;
+    border-top: 1px solid #808080;
+    margin: 8px 0;
+  }
 
-/* Footer */
-footer {
-  margin-top: 10px;
-  text-align: center;
-  font-size: 0.75rem;
-  border-top: 1px solid #808080;
-  padding-top: 4px;
-  background-color: #d4d0c8;
-}
-
+  /* Footer */
+  footer {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 0.75rem;
+    border-top: 1px solid #808080;
+    padding-top: 4px;
+    background-color: #d4d0c8;
+  }
   </style>
 
-  <!-- you can keep this line or delete it; CSS is now inline
+  <!-- external style.css not needed right now
   <link rel="stylesheet" href="style.css">
   -->
 </head>
@@ -181,9 +178,9 @@ footer {
   <div id="wrapper">
     <header>
       <marquee behavior="alternate" scrollamount="6">
-        <span class="marquee-text">★ Welcome to My Personal Webzone ★</span>
+        <span class="marquee-text">★ Welcome to Matthew Runyan's Webzone ★</span>
       </marquee>
-      <p class="tagline">Hand-coded portfolio &amp; resume – just like it's 2002.</p>
+      <p class="tagline">Hand-coded portfolio &amp; resume – just like it's 2002, but with 2025 bioinformatics.</p>
     </header>
 
     <nav>
@@ -199,18 +196,23 @@ footer {
         <td id="sidebar">
           <h2>Cool Links</h2>
           <ul>
-            <li><a href="https://github.com/yourusername" target="_blank">My GitHub</a></li>
-            <li><a href="#">My Blog (coming soon)</a></li>
+            <li><a href="https://github.com/mrunyan1" target="_blank">My GitHub (@mrunyan1)</a></li>
+            <li><a href="https://www.linkedin.com/in/mrunyan1" target="_blank">My LinkedIn</a></li>
+            <li><a href="CV.pdf" target="_blank">Download my full CV (PDF)</a></li>
           </ul>
 
           <h2>Site Info</h2>
           <p class="small">
-            Last updated: <span>2025-11-30</span><br>
+            Last updated: <span>Nov 2025</span><br>
+            Location: Boston, MA, USA<br>
             Best viewed in 1024x768 😉
           </p>
 
           <div class="under-construction">
             <p><span class="blink">Under Construction!</span></p>
+            <p class="small">
+              More projects, figures, and model visualizations coming soon.
+            </p>
           </div>
         </td>
 
@@ -218,8 +220,15 @@ footer {
           <section id="about">
             <h1>About Me</h1>
             <p>
-              Hi, I'm <strong>Your Name</strong>. This is my tiny corner of the old internet,
-              where I keep my projects, résumé, and random experiments.
+              Hi, I'm <strong>Matthew Runyan</strong>, a machine learning engineer and computational biologist
+              working on deep learning models for <strong>pre-mRNA splicing</strong> and variant interpretation.
+              I enjoy building genomic pipelines, training neural networks on personal transcriptomes, and
+              making sense of the regulatory code with model interpretability tools.
+            </p>
+            <p>
+              I’m currently at the <strong>Institute for Experiential AI at Northeastern University</strong>, and I
+              completed my <strong>MS in Bioinformatics</strong> at Northeastern and my <strong>BS in Biomedical
+              Engineering</strong> at the University of Virginia.
             </p>
           </section>
 
@@ -229,20 +238,42 @@ footer {
             <h1>Projects</h1>
 
             <div class="project">
-              <h3>Project Title #1</h3>
+              <h3>Deep Learning Models of Alternative Splicing with Personal Transcriptomes</h3>
               <p>
-                Short description of what this project does, what tech you used,
-                and why it's cool.
+                Developing dilated convolutional neural networks, masked language models, and transformer
+                architectures to predict splice-site usage and variant effects using personal transcriptomes.
+                Includes building modular training pipelines, automated experiment tracking, and
+                interpretability workflows (DeepLIFT/SHAP, motif discovery, etc.).
               </p>
               <p class="small">
-                [<a href="#" target="_blank">View on GitHub</a>] 
-                [<a href="#" target="_blank">Live Demo</a>]
+                Status: manuscript in preparation (2025).<br>
+                Tech: Python, PyTorch/TensorFlow, Nextflow, HPC.
               </p>
             </div>
 
             <div class="project">
-              <h3>Project Title #2</h3>
-              <p>Another project description goes here.</p>
+              <h3>GTEx / ENCODE RNA-seq &amp; WGS Processing Pipeline</h3>
+              <p>
+                Designed and maintain a <strong>Nextflow-based</strong> pipeline to process RNA-seq and whole-genome
+                sequencing samples from GTEx, ENCODE, and internal cohorts. The pipeline handles QC,
+                alignment, splicing quantification, and downstream integration with splicing models.
+              </p>
+              <p class="small">
+                Tech: Nextflow, STAR, rMATS, LeafCutter, SpliSER, SAMtools, SLURM/HPC.
+              </p>
+            </div>
+
+            <div class="project">
+              <h3>Automated Selection &amp; Placement of Multicellular Aggregates</h3>
+              <p>
+                Biomedical engineering capstone project building an automated system to handle multicellular
+                aggregates for biofabricated tissue constructs. Used MATLAB-based real-time image processing
+                to detect aggregates and Arduino-controlled motors for precise placement.
+              </p>
+              <p class="small">
+                University of Virginia, Aug 2021 – May 2022.<br>
+                Tech: MATLAB, Arduino, image processing, hardware control.
+              </p>
             </div>
           </section>
 
@@ -250,27 +281,70 @@ footer {
 
           <section id="resume">
             <h1>Résumé</h1>
-            <h3>Your Role / Title</h3>
-            <ul>
-              <li>Skill 1</li>
-              <li>Skill 2</li>
-              <li>Skill 3</li>
-            </ul>
-
-            <h3>Experience</h3>
-            <ul>
-              <li><strong>Company A</strong> – Role (Years)</li>
-              <li><strong>Company / School B</strong> – Role (Years)</li>
-            </ul>
 
             <h3>Education</h3>
             <ul>
-              <li>School / Degree / Year</li>
+              <li>
+                <strong>MS, Bioinformatics</strong>, Northeastern University, Boston, MA, USA<br>
+                <span class="small">Sept 2023 – Apr 2025</span><br>
+                <span class="small">
+                  Relevant coursework: Machine Learning &amp; Data Mining; Genomics in Bioinformatics;
+                  Statistics for Bioinformatics.
+                </span>
+              </li>
+              <li>
+                <strong>BS, Biomedical Engineering</strong>, University of Virginia, School of Engineering and Applied Science,<br>
+                Charlottesville, VA, USA<br>
+                <span class="small">Aug 2018 – May 2022</span><br>
+                <span class="small">
+                  Capstone: Automated selection and placement of multicellular aggregates for biofabricated tissue constructs.
+                </span>
+              </li>
+            </ul>
+
+            <h3>Research Experience</h3>
+            <ul>
+              <li>
+                <strong>ML Engineer, Computational Biology</strong> – Institute for Experiential AI, Northeastern University,<br>
+                Boston, MA, USA <span class="small">(July 2024 – present)</span>
+                <ul class="small">
+                  <li>Develop deep learning models and genomic pipelines for pre-mRNA splicing and variant interpretation.</li>
+                  <li>Build and maintain Nextflow pipelines for RNA-seq and WGS data from GTEx, ENCODE, and internal cohorts.</li>
+                  <li>Design modular training frameworks with automated experiment tracking and evaluation reports.</li>
+                  <li>Implement interpretability workflows (DeepLIFT/SHAP, seqlet discovery, RBP motif analysis).</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Research Assistant</strong> – Child Health Research Center, University of Virginia,<br>
+                Charlottesville, VA, USA <span class="small">(Feb 2022 – Aug 2023)</span>
+                <ul class="small">
+                  <li>Studied genetic and molecular mechanisms of pediatric kidney disease in APOL1 models.</li>
+                  <li>Maintained transgenic mouse and Drosophila lines; performed PCR/qPCR genotyping.</li>
+                  <li>Built RNA-seq analysis pipelines for urine-derived renal epithelial cells and differential expression.</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Biomedical Engineer Intern</strong> – NanoDx,<br>
+                Southborough, MA, USA <span class="small">(May 2021 – Aug 2021)</span>
+                <ul class="small">
+                  <li>Performed wafer-level biosensor testing and device prototyping.</li>
+                  <li>Used microfluidic and electronic probing to evaluate semiconductor performance.</li>
+                  <li>Designed and 3D-printed custom fixtures and mounts for probe positioning.</li>
+                </ul>
+              </li>
+            </ul>
+
+            <h3>Skills</h3>
+            <ul>
+              <li><strong>Programming &amp; Data Analysis:</strong> Python, R, MATLAB, SQL, Bash; Git, GitHub</li>
+              <li><strong>Machine Learning &amp; Statistics:</strong> TensorFlow, PyTorch, scikit-learn; deep learning for genomics; statistical modeling</li>
+              <li><strong>Bioinformatics &amp; Genomics:</strong> RNA-seq and WGS analysis; STAR, HTSeq, rMATS, LeafCutter, SpliSER, Nextflow, SAMtools, DESeq2</li>
+              <li><strong>Laboratory Techniques:</strong> Mammalian cell culture, RNA/DNA extraction, PCR/qPCR, immunohistochemistry, mouse handling and genotyping</li>
+              <li><strong>Computing &amp; Platforms:</strong> Linux, SLURM/HPC, Docker, Conda, Jupyter, AWS</li>
             </ul>
 
             <p class="small">
-              You can also link a PDF:
-              <a href="resume.pdf" target="_blank">Download my résumé</a> (just upload resume.pdf to this repo).
+              For full details, see my <a href="CV.pdf" target="_blank">CV (PDF)</a>.
             </p>
           </section>
 
@@ -279,8 +353,10 @@ footer {
           <section id="contact">
             <h1>Contact</h1>
             <p>
-              Email: <a href="mailto:you@example.com">you@example.com</a><br>
-              GitHub: <a href="https://github.com/yourusername" target="_blank">@yourusername</a>
+              Email: <a href="mailto:runyan.m@northeastern.edu">runyan.m@northeastern.edu</a><br>
+              GitHub: <a href="https://github.com/mrunyan1" target="_blank">github.com/mrunyan1</a><br>
+              LinkedIn: <a href="https://www.linkedin.com/in/mrunyan1" target="_blank">linkedin.com/in/mrunyan1</a><br>
+              Location: Boston, MA, USA
             </p>
           </section>
         </td>
@@ -288,7 +364,7 @@ footer {
     </table>
 
     <footer>
-      <p>© <span id="year">2025</span> Your Name's Webzone. All rights reserved.</p>
+      <p>© <span id="year">2025</span> Matthew Runyan. All rights reserved.</p>
       <p class="small">
         You are visitor #000001 (probably).
       </p>
