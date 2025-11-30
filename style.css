@@ -1,12 +1,13 @@
 :root {
-  --bg: #ffccff;       /* pink */
-  --panel-bg: #ffffcc; /* light yellow */
-  --text: #330066;     /* deep purple */
-  --accent: #ff6600;   /* orange */
-  --accent2: #0099ff;  /* bright blue */
-  --link: #0000ee;     /* classic blue link */
-  --link-visited: #551a8b;
+  --bg: #1a0026;
+  --panel-bg: #33004d;
+  --text: #ffe6ff;
+  --accent: #ff00cc;
+  --accent2: #ff9900;
+  --link: #ff99ff;
+  --link-visited: #ff66cc;
 }
+
 
 * {
   box-sizing: border-box;
