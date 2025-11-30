@@ -19,13 +19,14 @@
   }
 
   /* DNA text container (we'll fill this with JS) */
-  #dna-bg {
+#dna-bg {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;                 /* fill viewport; fixed stays put as you scroll */
-    padding: 20px;
+    height: 100vh;                 /* full viewport */
+    margin: 0;
+    padding: 0;                    /* no inset – start at exact top/left */
     white-space: pre-wrap;
     word-break: break-all;
     font-family: "Courier New", monospace;
@@ -34,8 +35,9 @@
     color: #33a4dd;                /* slightly lighter than #0080c0 */
     opacity: 0.4;
     z-index: 0;
-    pointer-events: none;          /* don't block clicks */
-  }
+    pointer-events: none;
+}
+
 
   /* Main box */
   #wrapper {
